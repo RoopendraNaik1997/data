@@ -1,0 +1,28 @@
+<div style="clear: both;"></div>
+<ng-container>
+    <div class="container-fluid">
+    <div class="card"><h2 class="card-title" style="padding-left:28px;color:#808080">History</h2></div>
+    <div *ngIf="cool">
+        <div *ngIf="history.length!=0">
+            <div *ngFor="let element of history">
+                <div class="card stylecard">
+                    <div class="d-flex justify-content-between" >
+                            <div id="text"> {{element.actionData.title}}</div>
+                            <div id="date">{{element.completedDate.substr(0,10)}}</div>
+                    </div>
+                    <div style="color:#808080" *ngIf="element.memeberPointLedgerData">{{element.memeberPointLedgerData.pointValue}} points</div>
+                </div>
+            </div>
+            <div *ngIf="history.length==0">
+                You dont have any history
+            </div>
+        </div>
+    </div>
+    <div *ngIf=!cool>
+        Something went wrong try again...
+    </div>
+    <div class="footer">
+        
+    </div>
+</div>
+</ng-container>
